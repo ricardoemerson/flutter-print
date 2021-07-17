@@ -31,7 +31,7 @@
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads/ricardo-emerson.flutter-print.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.flutter-print)
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/ricardo-emerson.flutter-print.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.flutter-print&ssr=false#review-details)
 
-Easily insert and remove `print("variable: $variable");` statement.
+Easily insert and remove `print('variable: $variable');` statement.
 
 ![](https://raw.githubusercontent.com/ricardoemerson/flutter-print/master/images/demonstration.gif)
 
@@ -40,11 +40,11 @@ Easily insert and remove `print("variable: $variable");` statement.
 With selection:
 * Highlight a variable (or really any text)
 * Press `Cmd+Shift+L`
-* The output (on a new line) will be: `print("variable: $variable");`
+* The output (on a new line) will be: `print('variable: $variable');`
 
 Without selection:
 * Press `Cmd+Shift+L`
-* The output (on the same line) will be: `print("");`
+* The output (on the same line) will be: `print();`
 
 To remove print:
 * Press `Cmd+Shift+D`

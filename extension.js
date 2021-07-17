@@ -58,10 +58,10 @@ function activate(context) {
         text
             ? vscode.commands.executeCommand('editor.action.insertLineAfter')
                 .then(() => {
-                    const logToInsert = `print("${text}: \$${text}");`;
+                    const logToInsert = `print('${text}: \$${text}');`;
                     insertText(logToInsert);
                 })
-            : insertText('print("");');
+            : insertText('print();');
 
     });
     context.subscriptions.push(insertLogStatement);
