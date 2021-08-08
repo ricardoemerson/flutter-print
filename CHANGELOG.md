@@ -2,6 +2,10 @@
 
 All notable changes to the Flutter Print extension will be documented in this file.
 
+## [1.1.0]
+
+- Added new shortcuts.
+
 ## [1.0.3]
 
 - Chage quotes to single.

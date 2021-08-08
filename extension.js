@@ -48,7 +48,7 @@ function deleteFoundLogStatements(workspaceEdit, docUri, logs) {
 }
 
 function activate(context) {
-    const insertLogStatement = vscode.commands.registerCommand('extension.insertSysoutStatement', () => {
+    const insertLogStatement = vscode.commands.registerCommand('extension.insertPrintStatement', () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) { return; }
 
@@ -64,9 +64,29 @@ function activate(context) {
             : insertText('print();');
 
     });
+
     context.subscriptions.push(insertLogStatement);
 
-    const deleteAllLogStatements = vscode.commands.registerCommand('extension.deleteAllSysoutStatements', () => {
+    const insertLogWithCurlyBracesStatement = vscode.commands.registerCommand('extension.insertPrintWithCurlyBracesStatement', () => {
+        const editor = vscode.window.activeTextEditor;
+        if (!editor) { return; }
+
+        const selection = editor.selection;
+        const text = editor.document.getText(selection);
+
+        text
+            ? vscode.commands.executeCommand('editor.action.insertLineAfter')
+                .then(() => {
+                    const logToInsert = `print('${ text }: \${${text}}');`;
+                    insertText(logToInsert);
+                })
+            : insertText(`print('\${${text}}');`);
+
+    });
+
+    context.subscriptions.push(insertLogWithCurlyBracesStatement);
+
+    const deleteAllLogStatements = vscode.commands.registerCommand('extension.deleteAllPrintStatements', () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) { return; }
 
@@ -79,6 +99,7 @@ function activate(context) {
 
         deleteFoundLogStatements(workspaceEdit, document.uri, logStatements);
     });
+
     context.subscriptions.push(deleteAllLogStatements);
 }
 exports.activate = activate;

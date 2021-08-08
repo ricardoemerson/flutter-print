@@ -2,7 +2,7 @@
   "name": "flutter-print",
   "displayName": "Flutter Print",
   "description": "Help insert and remove print(*) statement",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/flutter-print",
   "icon": "images/logo.png",
@@ -13,32 +13,40 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:extension.insertSysoutStatement",
-    "onCommand:extension.deleteAllSysoutStatements"
+    "onCommand:extension.insertPrintStatement",
+    "onCommand:extension.insertPrintWithCurlyBracesStatement",
+    "onCommand:extension.deleteAllPrintStatements"
   ],
   "main": "./extension",
   "contributes": {
     "commands": [
       {
-        "command": "extension.insertSysoutStatement",
+        "command": "extension.insertPrintStatement",
         "title": "Insert Flutter Print Statement"
       },
       {
-        "command": "extension.deleteAllSysoutStatements",
+        "command": "extension.deleteAllPrintStatements",
         "title": "Delete all Flutter Print statements"
       }
     ],
     "keybindings": [
       {
-        "command": "extension.insertSysoutStatement",
+        "command": "extension.insertPrintStatement",
+        "key": "shift+ctrl+l",
+        "mac": "shift+ctrl+l",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.insertPrintWithCurlyBracesStatement",
         "key": "shift+meta+l",
         "mac": "shift+cmd+l",
         "when": "editorTextFocus"
       },
       {
-        "command": "extension.deleteAllSysoutStatements",
+        "command": "extension.deleteAllPrintStatements",
         "key": "shift+meta+d",
-        "mac": "shift+cmd+d"
+        "mac": "shift+cmd+d",
+        "when": "editorTextFocus"
       }
     ]
   },

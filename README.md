@@ -39,12 +39,21 @@ Easily insert and remove `print('variable: $variable');` statement.
 
 With selection:
 * Highlight a variable (or really any text)
-* Press `Cmd+Shift+L`
+* Press `Ctrl+Shift+L`
 * The output (on a new line) will be: `print('variable: $variable');`
+
+With selection:
+* Highlight a variable (or really any text)
+* Press `Cmd+Shift+L`
+* The output (on a new line) will be: `print('variable: ${variable}');`
+
+Without selection:
+* Press `Ctrl+Shift+L`
+* The output (on the same line) will be: `print();`
 
 Without selection:
 * Press `Cmd+Shift+L`
-* The output (on the same line) will be: `print();`
+* The output (on the same line) will be: `print('${}');`
 
 To remove print:
 * Press `Cmd+Shift+D`
