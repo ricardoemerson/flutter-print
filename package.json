@@ -2,7 +2,7 @@
   "name": "flutter-print",
   "displayName": "Flutter Print",
   "description": "Help insert and remove print(*) statement",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/flutter-print",
   "icon": "images/logo.png",
@@ -25,6 +25,18 @@
         "title": "Insert Flutter Print Statement"
       },
       {
+        "command": "extension.insertPrintWithCurlyBracesStatement",
+        "title": "Insert Flutter Print Statement with Curly Brances"
+      },
+      {
+        "command": "extension.insertLogPrintStatement",
+        "title": "Insert Flutter Print Statement using Custom Log Class"
+      },
+      {
+        "command": "extension.insertLogPrintWithCurlyBracesStatement",
+        "title": "Insert Flutter Print Statement with Curly Brances using Custom Log Class"
+      },
+      {
         "command": "extension.deleteAllPrintStatements",
         "title": "Delete all Flutter Print statements"
       }
@@ -34,19 +46,31 @@
         "command": "extension.insertPrintStatement",
         "key": "shift+ctrl+l",
         "mac": "shift+ctrl+l",
-        "when": "editorTextFocus"
+        "when": "editorTextFocus && editorLangId == dart"
       },
       {
         "command": "extension.insertPrintWithCurlyBracesStatement",
         "key": "shift+meta+l",
         "mac": "shift+cmd+l",
-        "when": "editorTextFocus"
+        "when": "editorTextFocus && editorLangId == dart"
+      },
+      {
+        "command": "extension.insertLogPrintStatement",
+        "key": "ctrl+meta+l",
+        "mac": "ctrl+cmd+l",
+        "when": "editorTextFocus && editorLangId == dart"
+      },
+      {
+        "command": "extension.insertLogPrintWithCurlyBracesStatement",
+        "key": "alt+meta+l",
+        "mac": "alt+cmd+l",
+        "when": "editorTextFocus && editorLangId == dart"
       },
       {
         "command": "extension.deleteAllPrintStatements",
         "key": "shift+meta+d",
         "mac": "shift+cmd+d",
-        "when": "editorTextFocus"
+        "when": "editorTextFocus && editorLangId == dart"
       }
     ]
   },

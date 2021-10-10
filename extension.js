@@ -48,7 +48,7 @@ function deleteFoundLogStatements(workspaceEdit, docUri, logs) {
 }
 
 function activate(context) {
-    const insertLogStatement = vscode.commands.registerCommand('extension.insertPrintStatement', () => {
+    const insertPrintStatement = vscode.commands.registerCommand('extension.insertPrintStatement', () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) { return; }
 
@@ -65,9 +65,28 @@ function activate(context) {
 
     });
 
-    context.subscriptions.push(insertLogStatement);
+    context.subscriptions.push(insertPrintStatement);
 
-    const insertLogWithCurlyBracesStatement = vscode.commands.registerCommand('extension.insertPrintWithCurlyBracesStatement', () => {
+    const insertLogPrintStatement = vscode.commands.registerCommand('extension.insertLogPrintStatement', () => {
+        const editor = vscode.window.activeTextEditor;
+        if (!editor) { return; }
+
+        const selection = editor.selection;
+        const text = editor.document.getText(selection);
+
+        text
+            ? vscode.commands.executeCommand('editor.action.insertLineAfter')
+                .then(() => {
+                    const logToInsert = `Log.print('${text}: \$${text}');`;
+                    insertText(logToInsert);
+                })
+            : insertText('Log.print();');
+
+    });
+
+    context.subscriptions.push(insertLogPrintStatement);
+
+    const insertPrintWithCurlyBracesStatement = vscode.commands.registerCommand('extension.insertPrintWithCurlyBracesStatement', () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) { return; }
 
@@ -84,7 +103,26 @@ function activate(context) {
 
     });
 
-    context.subscriptions.push(insertLogWithCurlyBracesStatement);
+    context.subscriptions.push(insertPrintWithCurlyBracesStatement);
+
+    const insertLogPrintWithCurlyBracesStatement = vscode.commands.registerCommand('extension.insertLogPrintWithCurlyBracesStatement', () => {
+        const editor = vscode.window.activeTextEditor;
+        if (!editor) { return; }
+
+        const selection = editor.selection;
+        const text = editor.document.getText(selection);
+
+        text
+            ? vscode.commands.executeCommand('editor.action.insertLineAfter')
+                .then(() => {
+                    const logToInsert = `Log.print('${ text }: \${${text}}');`;
+                    insertText(logToInsert);
+                })
+            : insertText(`Log.print('\${${text}}');`);
+
+    });
+
+    context.subscriptions.push(insertLogPrintWithCurlyBracesStatement);
 
     const deleteAllLogStatements = vscode.commands.registerCommand('extension.deleteAllPrintStatements', () => {
         const editor = vscode.window.activeTextEditor;

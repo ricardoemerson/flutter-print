@@ -59,5 +59,33 @@ To remove print:
 * Press `Cmd+Shift+D`
 * This will delete all print statements in the current document
 
+## With Custom Log Class
+
+```dart
+import 'dart:developer' as developer;
+
+class Log {
+  Log._();
+
+  static void print(String value) {
+    developer.log(value, name: 'LOG');
+  }
+}
+```
+
+With selection:
+* Highlight a variable (or really any text)
+* Press `Ctrl+Cmd+L`
+* The output (on a new line) will be: `Log.print('variable: $variable');`
+
+With selection:
+* Highlight a variable (or really any text)
+* Press `Cmd+Alt+L`
+* The output (on a new line) will be: `Log.print('variable: ${variable}');`
+
+Without selection:
+* Press `Ctrl+Cmd+L`
+* The output (on the same line) will be: `Log.print();`
+
 ## License
 [MIT License](LICENSE)
