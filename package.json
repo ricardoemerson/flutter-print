@@ -2,7 +2,7 @@
   "name": "flutter-print",
   "displayName": "Flutter Print",
   "description": "Help insert and remove print(*) statement",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/flutter-print",
   "icon": "images/logo.png",
@@ -17,6 +17,7 @@
     "onCommand:extension.insertPrintWithCurlyBracesStatement",
     "onCommand:extension.insertLogPrintStatement",
     "onCommand:extension.insertLogPrintWithCurlyBracesStatement",
+    "onCommand:extension.insertLogInspectStatement",
     "onCommand:extension.deleteAllPrintStatements"
   ],
   "main": "./extension",
@@ -37,6 +38,10 @@
       {
         "command": "extension.insertLogPrintWithCurlyBracesStatement",
         "title": "Insert Flutter Print Statement with Curly Brances using Custom Log Class"
+      },
+      {
+        "command": "extension.insertLogInpectStatement",
+        "title": "Insert Flutter Inpect Statement using Custom Log Class"
       },
       {
         "command": "extension.deleteAllPrintStatements",
@@ -66,6 +71,12 @@
         "command": "extension.insertLogPrintWithCurlyBracesStatement",
         "key": "alt+meta+l",
         "mac": "alt+cmd+l",
+        "when": "editorTextFocus && editorLangId == dart"
+      },
+      {
+        "command": "extension.insertLogInspectStatement",
+        "key": "alt+meta+i",
+        "mac": "alt+cmd+i",
         "when": "editorTextFocus && editorLangId == dart"
       },
       {

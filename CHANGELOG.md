@@ -2,6 +2,10 @@
 
 All notable changes to the Flutter Print extension will be documented in this file.
 
+## [1.2.2]
+
+- Added new command inpect statement through custom Log class.
+
 ## [1.2.1]
 
 - Added new commands to activationEvents.

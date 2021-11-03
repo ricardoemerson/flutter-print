@@ -70,9 +70,14 @@ class Log {
   static void print(String value) {
     developer.log(value, name: 'LOG');
   }
+
+  static Object? inspect(Object? object) {
+    developer.inspect(object);
+  }
 }
 ```
 
+### Log.print()
 With selection:
 * Highlight a variable (or really any text)
 * Press `Ctrl+Cmd+L`
@@ -86,6 +91,17 @@ With selection:
 Without selection:
 * Press `Ctrl+Cmd+L`
 * The output (on the same line) will be: `Log.print();`
+
+
+### Log.inspect()
+With selection:
+* Highlight a variable (or really any text)
+* Press `Alt+Cmd+L`
+* The output (on a new line) will be: `Log.inspect(variable);`
+
+Without selection:
+* Press `Alt+Cmd+L`
+* The output (on the same line) will be: `Log.inspect();`
 
 ## License
 [MIT License](LICENSE)

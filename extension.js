@@ -124,6 +124,25 @@ function activate(context) {
 
     context.subscriptions.push(insertLogPrintWithCurlyBracesStatement);
 
+    const insertLogInspectStatement = vscode.commands.registerCommand('extension.insertLogInspectStatement', () => {
+        const editor = vscode.window.activeTextEditor;
+        if (!editor) { return; }
+
+        const selection = editor.selection;
+        const text = editor.document.getText(selection);
+
+        text
+            ? vscode.commands.executeCommand('editor.action.insertLineAfter')
+                .then(() => {
+                    const logToInsert = `Log.inspect(${ text });`;
+                    insertText(logToInsert);
+                })
+            : insertText(`Log.inspect(${text});`);
+
+    });
+
+    context.subscriptions.push(insertLogInspectStatement);
+
     const deleteAllLogStatements = vscode.commands.registerCommand('extension.deleteAllPrintStatements', () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) { return; }
