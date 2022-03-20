@@ -61,7 +61,7 @@ function activate(context) {
                     const logToInsert = `print('${text}: \$${text}');`;
                     insertText(logToInsert);
                 })
-            : insertText('print();');
+            : insertText(`print('');`);
 
     });
 
@@ -80,7 +80,7 @@ function activate(context) {
                     const logToInsert = `Log.print('${text}: \$${text}');`;
                     insertText(logToInsert);
                 })
-            : insertText('Log.print();');
+            : insertText(`Log.print('');`);
 
     });
 

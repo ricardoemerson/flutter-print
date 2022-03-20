@@ -9,16 +9,16 @@
 
 **Flutter Print** is an extension created for **Visual Studio Code**. If you find it useful, please consider supporting it.
 
-<table align="center" width="60%" border="0">
+<table align="center" width="100%" border="0">
   <tr>
-    <td>
+    <td >
       <a title="PayPal" href="https://www.paypal.com/donate?hosted_button_id=X26H7L6AVMD96">
-        Donate with PayPal
+        <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/donate-with-paypal.png" alt="Create Widgets and Classes for Flutter Logo" width="180"  height="80"/>
       </a>
     </td>
     <td>
       <a title="Mercado Pago" href="https://mpago.la/1LvP93a">
-        Donate with Mercado Pago
+        <img src="https://raw.githubusercontent.com/ricardoemerson/create-flutter-widgets-and-classes/master/images/donate-with-mercado-pago.png" alt="Create Widgets and Classes for Flutter Logo" width="220"  height="65"/>
       </a>
     </td>
   </tr>
@@ -26,40 +26,42 @@
 
 ## Flutter Print
 
+Easily insert and remove `print('variable: $variable');` statement.
+
 [![Version](https://vsmarketplacebadge.apphb.com/version/ricardo-emerson.flutter-print.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.flutter-print)
 [![Install](https://vsmarketplacebadge.apphb.com/installs/ricardo-emerson.flutter-print.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.flutter-print)
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads/ricardo-emerson.flutter-print.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.flutter-print)
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/ricardo-emerson.flutter-print.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.flutter-print&ssr=false#review-details)
 
-Easily insert and remove `print('variable: $variable');` statement.
 
-![](https://raw.githubusercontent.com/ricardoemerson/flutter-print/master/images/demonstration.gif)
+# Usage Examples
 
-## Usage
+> This extension overrides the shortcut for **Select all occurrences of current selection** - `Ctrl+Shift+L` on Windows and Linux and `Cmd+Shift+L` on macOS, however you can still use `Ctrl+F2` to execute same command.
 
-With selection:
-* Highlight a variable (or really any text)
-* Press `Ctrl+Shift+L`
-* The output (on a new line) will be: `print('variable: $variable');`
+## Print for variables:
 
-With selection:
-* Highlight a variable (or really any text)
-* Press `Cmd+Shift+L`
-* The output (on a new line) will be: `print('variable: ${variable}');`
+Select the variable that you want uses print statement and press `Ctrl+Shift+L` on Windows, Linux or macOS.
 
-Without selection:
-* Press `Ctrl+Shift+L`
-* The output (on the same line) will be: `print();`
+![Usage](images/print-variable.gif)
 
-Without selection:
-* Press `Cmd+Shift+L`
-* The output (on the same line) will be: `print('${}');`
 
-To remove print:
-* Press `Cmd+Shift+D`
-* This will delete all print statements in the current document
+## Print for object properties:
 
-## With Custom Log Class
+Select the object properties that you want uses print statement and press `Win+Shift+L` on Windows and Linux or `Cmd+Shift+L` on macOS.
+
+![Usage](images/print-object.gif)
+
+
+## Remove all print statements:
+
+To remove all print statements and press `Win+Shift+D` on Windows and Linux or `Cmd+Shift+D` on macOS.
+
+![Usage](images/delete-log.gif)
+
+
+# With Custom Log Class
+
+Create a custom log class.
 
 ```dart
 import 'dart:developer' as developer;
@@ -77,31 +79,25 @@ class Log {
 }
 ```
 
-### Log.print()
-With selection:
-* Highlight a variable (or really any text)
-* Press `Ctrl+Cmd+L`
-* The output (on a new line) will be: `Log.print('variable: $variable');`
+## Log.print() for variables:
 
-With selection:
-* Highlight a variable (or really any text)
-* Press `Cmd+Alt+L`
-* The output (on a new line) will be: `Log.print('variable: ${variable}');`
+Select the variable that you want uses a custom Log.print statement and press `Win+Ctrl+L` on Windows and Linux or `Cmd+Ctrl+L` on macOS.
 
-Without selection:
-* Press `Ctrl+Cmd+L`
-* The output (on the same line) will be: `Log.print();`
+![Usage](images/log-print-variable.gif)
 
 
-### Log.inspect()
-With selection:
-* Highlight a variable (or really any text)
-* Press `Alt+Cmd+L`
-* The output (on a new line) will be: `Log.inspect(variable);`
+## Log.print() for object properties:
 
-Without selection:
-* Press `Alt+Cmd+L`
-* The output (on the same line) will be: `Log.inspect();`
+Select the object properties that you want uses a custom Log.print statement and press `Win+Alt+L` on Windows and Linux or `Cmd+Alt+L` on macOS.
 
-## License
-[MIT License](LICENSE)
+![Usage](images/print-object.gif)
+
+
+## Log.inspect() for variables:
+
+Select the variable that you want uses a custom Log.inspect statement and press `Win+Ctrl+L` on Windows and Linux or `Cmd+Ctrl+L` on macOS.
+
+![Usage](images/log-inspect.gif)
+
+
+**That's all, Enjoy!**
