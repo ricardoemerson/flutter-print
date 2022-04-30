@@ -2,6 +2,10 @@
 
 All notable changes to the Flutter Print extension will be documented in this file.
 
+## [1.3.0]
+
+- Updated the README.md.
+
 ## [1.2.3]
 
 - Updated the extension documentation.

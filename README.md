@@ -33,6 +33,8 @@ Easily insert and remove `print('variable: $variable');` statement.
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads/ricardo-emerson.flutter-print.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.flutter-print)
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/ricardo-emerson.flutter-print.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.flutter-print&ssr=false#review-details)
 
+# Tutorial in Portuguese Brazil.
+[![✅ [2022] Como utilizar a extensão Flutter Print para Visual Studio Code?](https://img.youtube.com/vi/Mg_Pg2jQ_p0/0.jpg)](https://www.youtube.com/watch?v=Mg_Pg2jQ_p0)
 
 # Usage Examples
 
