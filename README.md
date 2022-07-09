@@ -40,16 +40,36 @@ Easily insert and remove `print('variable: $variable');` statement.
 
 > This extension overrides the shortcut for **Select all occurrences of current selection** - `Ctrl+Shift+L` on Windows and Linux and `Cmd+Shift+L` on macOS, however you can still use `Ctrl+F2` to execute same command.
 
+
+## Settings
+
+The Flutter Print extension has only one configuration option called `useDebugPrint` which is used to define whether the debugPrint statement will be used instead of the print statement.
+
+![Usage](images/use-debug-print-setting.png)
+
+## debugPrint for variables:
+
+With the extension setting useDebugPrint enabled, select the variable that you want uses debugPrint statement and press `Ctrl+Shift+L` on Windows, Linux or macOS.
+
+![Usage](images/debug-print-variable.gif)
+
+
+## debugPrint for object properties:
+
+With the extension setting useDebugPrint enabled, select the object properties that you want uses debugPrint statement and press `Win+Shift+L` on Windows and Linux or `Cmd+Shift+L` on macOS.
+
+![Usage](images/debug-print-object.gif)
+
 ## Print for variables:
 
-Select the variable that you want uses print statement and press `Ctrl+Shift+L` on Windows, Linux or macOS.
+With the extension setting useDebugPrint disabled, select the variable that you want uses print statement and press `Ctrl+Shift+L` on Windows, Linux or macOS.
 
 ![Usage](images/print-variable.gif)
 
 
 ## Print for object properties:
 
-Select the object properties that you want uses print statement and press `Win+Shift+L` on Windows and Linux or `Cmd+Shift+L` on macOS.
+With the extension setting useDebugPrint disabled, select the object properties that you want uses print statement and press `Win+Shift+L` on Windows and Linux or `Cmd+Shift+L` on macOS.
 
 ![Usage](images/print-object.gif)
 

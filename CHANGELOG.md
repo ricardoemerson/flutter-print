@@ -2,6 +2,10 @@
 
 All notable changes to the Flutter Print extension will be documented in this file.
 
+## [1.4.0]
+
+- Added `useDebugPrint` setting to define when debugPrint or print instruction will be used.
+
 ## [1.3.0]
 
 - Updated the README.md.

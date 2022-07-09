@@ -55,10 +55,20 @@ function activate(context) {
         const selection = editor.selection;
         const text = editor.document.getText(selection);
 
+        const config = vscode.workspace.getConfiguration("flutterPrint");
+        const useDebugPrint = config.get("useDebugPrint");
+
         text
             ? vscode.commands.executeCommand('editor.action.insertLineAfter')
                 .then(() => {
-                    const logToInsert = `print('${text}: \$${text}');`;
+                    let logToInsert;
+
+                    if (useDebugPrint) {
+                      logToInsert = `debugPrint('${ text }: \$${ text }');`;
+                    } else {
+                      logToInsert = `print('${ text }: \$${ text }');`;
+                    }
+
                     insertText(logToInsert);
                 })
             : insertText(`print('');`);
@@ -93,10 +103,20 @@ function activate(context) {
         const selection = editor.selection;
         const text = editor.document.getText(selection);
 
+        const config = vscode.workspace.getConfiguration("flutterPrint");
+        const useDebugPrint = config.get("useDebugPrint");
+
         text
             ? vscode.commands.executeCommand('editor.action.insertLineAfter')
                 .then(() => {
-                    const logToInsert = `print('${ text }: \${${text}}');`;
+                    let logToInsert;
+
+                    if (useDebugPrint) {
+                      logToInsert = `debugPrint('${ text }: \${${text}}');`;
+                    } else {
+                      logToInsert = `print('${ text }: \${${text}}');`;
+                    }
+
                     insertText(logToInsert);
                 })
             : insertText(`print('\${${text}}');`);
