@@ -2,7 +2,7 @@
   "name": "flutter-print",
   "displayName": "Flutter Print",
   "description": "Help insert and remove print(*) statement",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/flutter-print",
   "icon": "images/logo.png",
@@ -18,7 +18,8 @@
     "onCommand:extension.insertLogPrintStatement",
     "onCommand:extension.insertLogPrintWithCurlyBracesStatement",
     "onCommand:extension.insertLogInspectStatement",
-    "onCommand:extension.deleteAllPrintStatements"
+    "onCommand:extension.deleteAllPrintStatements",
+    "workspaceContains:pubspec.yaml"
   ],
   "main": "./extension",
   "contributes": {

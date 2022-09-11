@@ -52,24 +52,24 @@ async function showMessage(version, previousVersion) {
 
   if (result !== null) {
     if (result === whatsNew) {
-      await env.openExternal(
-        Uri.parse(
+      await vscode.env.openExternal(
+        vscode.Uri.parse(
           'https://marketplace.visualstudio.com/items/ricardo-emerson.flutter-print/changelog'
         )
       );
     } else if (result === giveAStar) {
-      await env.openExternal(
-        Uri.parse('https://github.com/ricardoemerson/flutter-print')
+      await vscode.env.openExternal(
+        vscode.Uri.parse('https://github.com/ricardoemerson/flutter-print')
       );
     } else if (result === writeReview) {
-      await env.openExternal(
-        Uri.parse(
+      await vscode.env.openExternal(
+        vscode.Uri.parse(
           'https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.flutter-print&ssr=false#review-details'
         )
       );
     } else if (result === sponsor) {
-      await env.openExternal(
-        Uri.parse('https://www.paypal.com/donate?hosted_button_id=X26H7L6AVMD96')
+      await vscode.env.openExternal(
+        vscode.Uri.parse('https://www.paypal.com/donate?hosted_button_id=X26H7L6AVMD96')
       );
     }
   }
