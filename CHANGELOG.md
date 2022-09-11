@@ -2,6 +2,10 @@
 
 All notable changes to the Flutter Print extension will be documented in this file.
 
+## [1.5.0]
+
+- Added notification message for extension updates.
+
 ## [1.4.1]
 
 - Added fix for when no text is selected.

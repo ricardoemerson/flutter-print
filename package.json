@@ -2,12 +2,12 @@
   "name": "flutter-print",
   "displayName": "Flutter Print",
   "description": "Help insert and remove print(*) statement",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/flutter-print",
   "icon": "images/logo.png",
   "engines": {
-    "vscode": "^1.5.0"
+    "vscode": "^1.4.2"
   },
   "categories": [
     "Other"

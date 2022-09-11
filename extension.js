@@ -1,4 +1,5 @@
 const vscode = require('vscode');
+const helperMessage = require('./message.js');
 
 const insertText = (val) => {
     const editor = vscode.window.activeTextEditor;
@@ -48,6 +49,14 @@ function deleteFoundLogStatements(workspaceEdit, docUri, logs) {
 }
 
 function activate(context) {
+    const previousVersion = context.globalState.get(helperMessage.LAST_VERSION_KEY);
+    const extensionData = vscode.extensions.getExtension(
+        'ricardo-emerson.flutter-print'
+    );
+    const currentVersion = extensionData.packageJSON.version;
+
+    helperMessage.showWelcomeOrWhatsNew(context, currentVersion, previousVersion);
+
     const insertPrintStatement = vscode.commands.registerCommand('extension.insertPrintStatement', () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) { return; }
