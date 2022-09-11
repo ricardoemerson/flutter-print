@@ -71,7 +71,7 @@ function activate(context) {
 
                     insertText(logToInsert);
                 })
-            : insertText(`print('');`);
+            : useDebugPrint ? insertText(`debugPrint('');`) : insertText(`print('');`);
 
     });
 
@@ -119,7 +119,7 @@ function activate(context) {
 
                     insertText(logToInsert);
                 })
-            : insertText(`print('\${${text}}');`);
+            : useDebugPrint ? insertText(`debugPrint('\${${text}}');`) : insertText(`print('\${${text}}');`);
 
     });
 
