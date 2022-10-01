@@ -73,9 +73,9 @@ function activate(context) {
                     let logToInsert;
 
                     if (useDebugPrint) {
-                      logToInsert = `debugPrint('${ text }: \$${ text }');`;
+                      logToInsert = `debugPrint('${ text }: \${${text}}');`;
                     } else {
-                      logToInsert = `print('${ text }: \$${ text }');`;
+                      logToInsert = `print('${ text }: \${${text}}');`;
                     }
 
                     insertText(logToInsert);
@@ -96,7 +96,7 @@ function activate(context) {
         text
             ? vscode.commands.executeCommand('editor.action.insertLineAfter')
                 .then(() => {
-                    const logToInsert = `Log.print('${text}: \$${text}');`;
+                    const logToInsert = `Log.print('${ text }: \${${text}}');`;
                     insertText(logToInsert);
                 })
             : insertText(`Log.print('');`);
@@ -104,54 +104,6 @@ function activate(context) {
     });
 
     context.subscriptions.push(insertLogPrintStatement);
-
-    const insertPrintWithCurlyBracesStatement = vscode.commands.registerCommand('extension.insertPrintWithCurlyBracesStatement', () => {
-        const editor = vscode.window.activeTextEditor;
-        if (!editor) { return; }
-
-        const selection = editor.selection;
-        const text = editor.document.getText(selection);
-
-        const config = vscode.workspace.getConfiguration("flutterPrint");
-        const useDebugPrint = config.get("useDebugPrint");
-
-        text
-            ? vscode.commands.executeCommand('editor.action.insertLineAfter')
-                .then(() => {
-                    let logToInsert;
-
-                    if (useDebugPrint) {
-                      logToInsert = `debugPrint('${ text }: \${${text}}');`;
-                    } else {
-                      logToInsert = `print('${ text }: \${${text}}');`;
-                    }
-
-                    insertText(logToInsert);
-                })
-            : useDebugPrint ? insertText(`debugPrint('\${${text}}');`) : insertText(`print('\${${text}}');`);
-
-    });
-
-    context.subscriptions.push(insertPrintWithCurlyBracesStatement);
-
-    const insertLogPrintWithCurlyBracesStatement = vscode.commands.registerCommand('extension.insertLogPrintWithCurlyBracesStatement', () => {
-        const editor = vscode.window.activeTextEditor;
-        if (!editor) { return; }
-
-        const selection = editor.selection;
-        const text = editor.document.getText(selection);
-
-        text
-            ? vscode.commands.executeCommand('editor.action.insertLineAfter')
-                .then(() => {
-                    const logToInsert = `Log.print('${ text }: \${${text}}');`;
-                    insertText(logToInsert);
-                })
-            : insertText(`Log.print('\${${text}}');`);
-
-    });
-
-    context.subscriptions.push(insertLogPrintWithCurlyBracesStatement);
 
     const insertLogInspectStatement = vscode.commands.registerCommand('extension.insertLogInspectStatement', () => {
         const editor = vscode.window.activeTextEditor;

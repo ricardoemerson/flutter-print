@@ -2,7 +2,7 @@
   "name": "flutter-print",
   "displayName": "Flutter Print",
   "description": "Help insert and remove print(*) statement",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "publisher": "ricardo-emerson",
   "repository": "https://github.com/ricardoemerson/flutter-print",
   "icon": "images/logo.png",
@@ -14,9 +14,7 @@
   ],
   "activationEvents": [
     "onCommand:extension.insertPrintStatement",
-    "onCommand:extension.insertPrintWithCurlyBracesStatement",
     "onCommand:extension.insertLogPrintStatement",
-    "onCommand:extension.insertLogPrintWithCurlyBracesStatement",
     "onCommand:extension.insertLogInspectStatement",
     "onCommand:extension.deleteAllPrintStatements",
     "workspaceContains:pubspec.yaml"
@@ -29,16 +27,8 @@
         "title": "Insert Flutter Print Statement"
       },
       {
-        "command": "extension.insertPrintWithCurlyBracesStatement",
-        "title": "Insert Flutter Print Statement with Curly Braces"
-      },
-      {
         "command": "extension.insertLogPrintStatement",
         "title": "Insert Flutter Print Statement using Custom Log Class"
-      },
-      {
-        "command": "extension.insertLogPrintWithCurlyBracesStatement",
-        "title": "Insert Flutter Print Statement with Curly Braces using Custom Log Class"
       },
       {
         "command": "extension.insertLogInspectStatement",
@@ -57,21 +47,9 @@
         "when": "editorTextFocus && editorLangId == dart"
       },
       {
-        "command": "extension.insertPrintWithCurlyBracesStatement",
+        "command": "extension.insertLogPrintStatement",
         "key": "shift+meta+l",
         "mac": "shift+cmd+l",
-        "when": "editorTextFocus && editorLangId == dart"
-      },
-      {
-        "command": "extension.insertLogPrintStatement",
-        "key": "ctrl+meta+l",
-        "mac": "ctrl+cmd+l",
-        "when": "editorTextFocus && editorLangId == dart"
-      },
-      {
-        "command": "extension.insertLogPrintWithCurlyBracesStatement",
-        "key": "alt+meta+l",
-        "mac": "alt+cmd+l",
         "when": "editorTextFocus && editorLangId == dart"
       },
       {

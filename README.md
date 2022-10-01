@@ -26,7 +26,7 @@
 
 ## Flutter Print
 
-Easily insert and remove `print('variable: $variable');` statement.
+Easily insert and remove `debugPrint('variable: $variable');` statement.
 
 [![Version](https://vsmarketplacebadge.apphb.com/version/ricardo-emerson.flutter-print.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.flutter-print)
 [![Install](https://vsmarketplacebadge.apphb.com/installs/ricardo-emerson.flutter-print.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.flutter-print)
@@ -48,32 +48,17 @@ The Flutter Print extension has only one configuration option called `useDebugPr
 
 ![Usage](images/use-debug-print-setting.png)
 
-## debugPrint for variables:
+## debugPrint for variables or object properties:
 
-With the extension setting useDebugPrint enabled, select the variable that you want uses debugPrint statement and press `Ctrl+Shift+L` on Windows, Linux or macOS.
+With the extension setting useDebugPrint enabled, select the variable or object properties that you want uses debugPrint statement and press `Ctrl+Shift+L` on Windows, Linux or macOS.
 
-![Usage](images/debug-print-variable.gif)
+![Usage](images/debug-print.gif)
 
+## Print for variables or object properties:
 
-## debugPrint for object properties:
+With the extension setting useDebugPrint disabled, select the variable or object properties that you want uses print statement and press `Ctrl+Shift+L` on Windows, Linux or macOS.
 
-With the extension setting useDebugPrint enabled, select the object properties that you want uses debugPrint statement and press `Win+Shift+L` on Windows and Linux or `Cmd+Shift+L` on macOS.
-
-![Usage](images/debug-print-object.gif)
-
-## Print for variables:
-
-With the extension setting useDebugPrint disabled, select the variable that you want uses print statement and press `Ctrl+Shift+L` on Windows, Linux or macOS.
-
-![Usage](images/print-variable.gif)
-
-
-## Print for object properties:
-
-With the extension setting useDebugPrint disabled, select the object properties that you want uses print statement and press `Win+Shift+L` on Windows and Linux or `Cmd+Shift+L` on macOS.
-
-![Usage](images/print-object.gif)
-
+![Usage](images/print.gif)
 
 ## Remove all print statements:
 
@@ -92,28 +77,22 @@ import 'dart:developer' as developer;
 class Log {
   Log._();
 
-  static void print(String value) {
-    developer.log(value, name: 'LOG');
+  static void print(String value, {StackTrace? stackTrace}) {
+    developer.log(value, name: 'LOG', stackTrace: stackTrace);
   }
 
   static Object? inspect(Object? object) {
-    developer.inspect(object);
+    return developer.inspect(object);
   }
 }
+
 ```
 
-## Log.print() for variables:
+## Log.print() for variables or object properties:
 
-Select the variable that you want uses a custom Log.print statement and press `Win+Ctrl+L` on Windows and Linux or `Cmd+Ctrl+L` on macOS.
+Select the variable or object properties that you want uses a custom Log.print statement and press `Win+Ctrl+L` on Windows and Linux or `Cmd+Ctrl+L` on macOS.
 
-![Usage](images/log-print-variable.gif)
-
-
-## Log.print() for object properties:
-
-Select the object properties that you want uses a custom Log.print statement and press `Win+Alt+L` on Windows and Linux or `Cmd+Alt+L` on macOS.
-
-![Usage](images/print-object.gif)
+![Usage](images/log-print.gif)
 
 
 ## Log.inspect() for variables:
