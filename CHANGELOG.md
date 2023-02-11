@@ -2,6 +2,10 @@
 
 All notable changes to the Flutter Print extension will be documented in this file.
 
+## [1.6.1]
+
+- Updated the badges in README.md.
+
 ## [1.6.0]
 
 - Simplified extension shortcuts.

@@ -28,11 +28,11 @@
 
 Easily insert and remove `debugPrint('variable: $variable');` statement.
 
-[![Version](https://vsmarketplacebadge.apphb.com/version/ricardo-emerson.flutter-print.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.flutter-print)
-[![Install](https://vsmarketplacebadge.apphb.com/installs/ricardo-emerson.flutter-print.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.flutter-print)
-[![Downloads](https://vsmarketplacebadge.apphb.com/downloads/ricardo-emerson.flutter-print.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.flutter-print)
-[![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/ricardo-emerson.flutter-print.svg)](https://marketplace.visualstudio.com/items?itemName=ricardo-emerson.flutter-print&ssr=false#review-details)
-[![GitHub Stars](https://img.shields.io/github/stars/ricardoemerson/flutter-print.svg?logo=github)](https://github.com/ricardoemerson/flutter-print)
+![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/ricardo-emerson.flutter-print.svg?style=flat-square)
+![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/ricardo-emerson.flutter-print.svg?style=flat-square)
+![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/ricardo-emerson.flutter-print.svg?style=flat-square)
+![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/ricardo-emerson.flutter-print.svg?style=flat-square)
+[![GitHub](https://img.shields.io/github/stars/ricardoemerson/flutter-print.svg?style=flat-square)](https://github.com/ricardoemerson/flutter-print)
 
 # Tutorial in Portuguese Brazil.
 [![✅ [2022] Como utilizar a extensão Flutter Print para Visual Studio Code?](https://img.youtube.com/vi/Mg_Pg2jQ_p0/0.jpg)](https://www.youtube.com/watch?v=Mg_Pg2jQ_p0)
